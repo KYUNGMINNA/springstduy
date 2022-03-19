@@ -25,9 +25,14 @@ public class Controller_RequestMapping {
         printWriter.println("</title>");
         printWriter.println("</head>");
         printWriter.println("<body>");
-        printWriter.println("<h1>first Srping </h1>");
+        printWriter.println("<p style='color:pink; font-size: 30px'>first Srping </p>");
         printWriter.println("</body>");
         printWriter.println("</html>");
+    }
+    @RequestMapping("/second")
+    public String requestmappingview(){
+
+        return "firstspring";
     }
 
 }
