@@ -2,20 +2,18 @@ package com.fastcampus.ch3;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
-@RequestMapping("/common")
 public class Controller_RequestMapping {
 
-    @RequestMapping("/requestmapping")
-    public void requestmapping_get(HttpServletResponse httpServletResponse) throws IOException {
-        System.out.println("hello spring :" +"hello spring");
+    @RequestMapping("/request")
+    public void request_default(HttpServletResponse httpServletResponse) throws IOException {
 
         httpServletResponse.setContentType("text/html");
         httpServletResponse.setCharacterEncoding("utf-8");
@@ -28,30 +26,38 @@ public class Controller_RequestMapping {
         printWriter.println("</title>");
         printWriter.println("</head>");
         printWriter.println("<body>");
-        printWriter.println("@Requestmapping('/first')");
-        printWriter.println("Only Get request");
-
-
-        printWriter.println("<p style='color:pink; font-size: 30px'>first Srping </p>");
+        printWriter.println("<h1>@Requestmapping('/request')</h1>");
+        printWriter.println("<h1>httpServletResponse.setContentType('text/html');</h1>");
+        printWriter.println("<h1>httpServletResponse.setCharacterEncoding('utf-8');</h1>");
+        printWriter.println("<h1>PrintWriter printWriter=httpServletResponse.getWriter();</h1>");
         printWriter.println("</body>");
         printWriter.println("</html>");
     }
-    @RequestMapping(value = "/requestmapping_views_false",method=RequestMethod.GET)
-    public String requestmapping_views(@RequestParam(required = false) int year,
-                                       @RequestParam(name = "month",required = false) int month,
-                                       int day, Model model){
-        model.addAttribute("year",year);
-        model.addAttribute("month",month);
-        model.addAttribute("day",day);
-        return "getrequest_Int";
-    }    @RequestMapping(value = "/requestmapping_views_requiered_true",method=RequestMethod.GET)
-    public String requestmapping_views_param(@RequestParam int year,
-                                             @RequestParam(required = true) int month,
-                                             @RequestParam(name = "day",required = true) int day, Model model){
-        model.addAttribute("year",year);
-        model.addAttribute("month",month);
-        model.addAttribute("day",day);
-        return "getrequest_Int";
+
+    //-------------------------------------------
+
+    @RequestMapping("/request_mvc_jsp")
+    public String request_mvc_jsp(){
+
+        return "request_mvc_jsp";
     }
+    @RequestMapping("/request_mvc_void")
+    public void request_mvc_void(){
+
+    }
+    @RequestMapping("/request_mvc_modelandview")
+    public ModelAndView requestm_mvc_modelandview() {
+
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("request_mvc_modelandview");
+
+        return modelAndView;
+    }
+
+
+
+
+
+
 
 }
