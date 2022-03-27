@@ -22,7 +22,8 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.fastcampus.ch3" />
-	
-	
+
+
+	<view-controller path="/view_controller" view-name="view_controller" />
 	
 </beans:beans>
