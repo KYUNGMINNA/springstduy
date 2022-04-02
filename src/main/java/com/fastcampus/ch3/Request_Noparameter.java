@@ -1,7 +1,6 @@
 package com.fastcampus.ch3;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
-public class Controller_RequestMapping {
+public class Request_Noparameter {
 
     @RequestMapping("/request")
     public void request_default(HttpServletResponse httpServletResponse) throws IOException {
@@ -34,25 +33,26 @@ public class Controller_RequestMapping {
         printWriter.println("</html>");
     }
 
-    //-------------------------------------------
 
-    @RequestMapping("/request_mvc_jsp")
-    public String request_mvc_jsp(){
+    @RequestMapping("/request_string")
+    public String request_string(){
 
-        return "request_mvc_jsp";
+        return "String_Void_MV_NO_P/request_string";
     }
-    @RequestMapping("/request_mvc_void")
-    public void request_mvc_void(){
+    @RequestMapping("/String_Void_MV_NO_P/request_void")
+    public void request_void(){
 
     }
-    @RequestMapping("/request_mvc_modelandview")
-    public ModelAndView requestm_mvc_modelandview() {
+    @RequestMapping("/request_modelandview")
+    public ModelAndView request_modelandview() {
 
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("request_mvc_modelandview");
+        modelAndView.setViewName("String_Void_MV_NO_P/request_modelandview");
 
         return modelAndView;
     }
+    //servlet-context.xml에 <view-controller path="/view_controller" view-name="view_controller" />
+
 
 
 

@@ -22,7 +22,9 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.fastcampus.ch3" />
-	
-	
-	
+
+
+	<view-controller path="/view_controller" view-name="String_Void_MV_NO_P/view_controller" />
+	<view-controller path="/view_yes_p" view-name="String_Void_MV_YES_P/request_string_yes_p" />
+
 </beans:beans>
