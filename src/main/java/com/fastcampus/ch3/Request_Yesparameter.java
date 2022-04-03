@@ -2,6 +2,7 @@ package com.fastcampus.ch3;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -72,7 +73,7 @@ public class Request_Yesparameter {
 
     //객체형 타입의 파라미터 테스트
     @RequestMapping("/request_obejct")// http://localhost/ch3/request_object?year=2022&month=04&day=2&hour=23
-    public String request_String_yes_p(Info info){
+    public String request_String_yes_p(Info info) {
                                   //== @ModelAttribute Info info == @ModelAttribute("info") Info info
         return "String_Void_MV_YES_P/request_object_yes_p";
     }
@@ -80,6 +81,11 @@ public class Request_Yesparameter {
     public String request_String_yes_p2(Info info, Model model){
         model.addAttribute("INFO",info);
 
+
+        return "String_Void_MV_YES_P/request_object_yes_p2";
+    }
+    @RequestMapping("/request_obejct3") // http://localhost/ch3/request_object2?year=2022&month=04&day=2&hour=23
+    public String request_String_yes_p3(Info info, BindingResult result){
 
         return "String_Void_MV_YES_P/request_object_yes_p2";
     }
