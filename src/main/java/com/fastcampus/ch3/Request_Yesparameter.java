@@ -2,6 +2,7 @@ package com.fastcampus.ch3;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -68,5 +69,57 @@ public class Request_Yesparameter {
 
     //기본형, String 타입의 파라미터 테스트
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //객체형 타입의 파라미터 테스트
+    @RequestMapping("/request_obejct")// http://localhost/ch3/request_object?year=2022&month=04&day=2&hour=23
+    public String request_String_yes_p(Info info){
+                                  //== @ModelAttribute Info info == @ModelAttribute("info") Info info
+        return "String_Void_MV_YES_P/request_object_yes_p";
+    }
+    @RequestMapping("/request_obejct2") // http://localhost/ch3/request_object2?year=2022&month=04&day=2&hour=23
+    public String request_String_yes_p2(Info info, Model model){
+        model.addAttribute("INFO",info);
+
+
+        return "String_Void_MV_YES_P/request_object_yes_p2";
+    }
+
+    @RequestMapping("/String_Void_MV_YES_P/request_object_yes_p")  //http://localhost/ch3//String_Void_MV_YES_P/request_object_yes_2?year=2022&month=04&day=2&hour=23
+    public void request_void_yes_p(Info info){
+
+    }
+    @RequestMapping("/String_Void_MV_YES_P/request_object_yes_p2")
+    public void request_void_yes_p2(@ModelAttribute("INfo") Info info,Model model){ ////http://localhost/ch3//String_Void_MV_YES_P/request_object_yes_2?year=2022&month=04&day=2&hour=23
+        model.addAttribute("INFO",info);
+
+    }
+
+    @RequestMapping("/request_object_modelandview")  //http://localhost/ch3/request_object_modelandview?year=2022&month=04&day=2&hour=23
+    public ModelAndView requestm_modelandview_yes_p(Info info) {
+
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("String_Void_MV_YES_P/request_object_yes_p");
+        modelAndView.addObject("INFO",info);
+
+        return modelAndView;
+    }
+    @RequestMapping("/request_object_modelandview2")  //http://localhost/ch3/request_object_modelandview2?year=2022&month=04&day=2&hour=23
+    public ModelAndView requestm_modelandview_yes_p2(Info info) {
+
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("String_Void_MV_YES_P/request_object_yes_p2");
+        modelAndView.addObject("INFO",info);
+
+        return modelAndView;
+    }
+
+
+
+
+
+
+
+
+
 
 }
