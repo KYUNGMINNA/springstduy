@@ -1,19 +1,22 @@
-package com.fastcampus.ch3;
+package com.fastcampus.ch3.controller.request;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
 public class Request_Noparameter {
 
+
+
     @RequestMapping("/request")
     public void request_default(HttpServletResponse httpServletResponse) throws IOException {
-
         httpServletResponse.setContentType("text/html");
         httpServletResponse.setCharacterEncoding("utf-8");
         PrintWriter printWriter=httpServletResponse.getWriter();

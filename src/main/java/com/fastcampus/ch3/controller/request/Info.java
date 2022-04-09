@@ -1,4 +1,4 @@
-package com.fastcampus.ch3;
+package com.fastcampus.ch3.controller.request;
 
 public class Info {
     private int year;
