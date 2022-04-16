@@ -31,4 +31,36 @@
 	<!-- http://localhost/ch3/view_yes_p?year=2022&month=04&day=2&hour=23         -->
 	<view-controller path="/view_yes_p" view-name="String_Void_MV_YES_P/request_string_yes_p" />
 
+
+
+	 <!-- 예외 종류 별 뷰 맵핑에 사용 하기 -->
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<beans:property name="defaultErrorView" value="error"/>
+		<beans:property name="exceptionMappings">
+			<beans:props>
+				<beans:prop key="com.fastcampus.ch3.exception.MyException4">error405</beans:prop>
+			</beans:props>
+		</beans:property>
+		<beans:property name="statusCodes">
+			<beans:props>
+				<beans:prop key="error405">399</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+
+	<!-- global 예외 처리기 등록하기 -->
+	<annotation-driven validator="globalvalidator"/>
+	<beans:bean id="globalvalidator" class="com.fastcampus.ch3.conversion.validation.globalvalidator"/>
+
+	<!-- error_message.properites.properties -->
+	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>error_message</beans:value> <!-- /src/main/resources/error_message.properites.properties -->
+			</beans:list>
+		</beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+
 </beans:beans>
