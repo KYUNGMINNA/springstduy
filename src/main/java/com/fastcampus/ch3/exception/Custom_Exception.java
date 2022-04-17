@@ -17,6 +17,7 @@ class MyException extends RuntimeException{
     }
 }
 
+//views-> error.jsp 파일로 이동
 class MyException2 extends RuntimeException{
     MyException2(){
         this("");
@@ -59,17 +60,17 @@ public class Custom_Exception {
 
     @RequestMapping("/mycustomdefault_exception_throw")
     public void exception_throw5() throws Exception{
-        System.out.println("throw custom MyException ");
+        System.out.println("throw custom MyException2 ");
         throw new MyException2("사용자 정의 메서드 ");
     }
     @RequestMapping("/mycustom501_exception_throw")
     public void exception_throw6() throws Exception{
-        System.out.println("throw custom MyException ");
+        System.out.println("throw custom MyException3 ");
         throw new MyException3("사용자 정의 메서드 ");
     }
     @RequestMapping("/mycustom_error405_to_399")
     public void exception_throw7() throws Exception{
-        System.out.println("throw custom MyException ");
+        System.out.println("throw custom MyException4 ");
         throw new MyException4("사용자 정의 메서드 ");
     }
 }
