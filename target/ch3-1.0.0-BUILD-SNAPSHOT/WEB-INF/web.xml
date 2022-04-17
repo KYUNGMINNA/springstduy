@@ -56,9 +56,10 @@
 		<error-code>401</error-code>
 		<location>/WEB-INF/error401.jsp</location>
 	</error-page>
+
 	<error-page>
-		<error-code>502</error-code>
-		<location>/WEB-INF/error500.jsp</location>
+		<error-code>503</error-code>
+		<location>/WEB-INF/error502.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>501</error-code>

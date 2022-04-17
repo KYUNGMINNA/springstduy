@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
-//// Custom 예외 만들어 사용하려면 Global Exception 애너테이션 주석 처리 해야 함
 @ResponseStatus(HttpStatus.UNAUTHORIZED)
 class MyException extends RuntimeException{
     MyException(){
@@ -17,7 +16,6 @@ class MyException extends RuntimeException{
     }
 }
 
-//views-> error.jsp 파일로 이동
 class MyException2 extends RuntimeException{
     MyException2(){
         this("");
@@ -28,7 +26,8 @@ class MyException2 extends RuntimeException{
     }
 
 
-}@ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
+}
+@ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
 class MyException3 extends RuntimeException{
     MyException3(){
         this("");
@@ -48,29 +47,44 @@ class MyException4 extends RuntimeException{
         super(messgae);
     }
 }
+@ResponseStatus(HttpStatus.BAD_GATEWAY)
+class MyException5 extends RuntimeException{
+    MyException5(){
+        this("");
+        System.out.println("기본생성자 호출");
+    }
+    MyException5(String messgae){
+        super(messgae);
+    }
+}
 
 @Controller
 public class Custom_Exception {
 
-    @RequestMapping("/mycustom401_exception_throw")
+    @RequestMapping("/myexception_error401_webxml")
     public void exception_throw4() throws Exception{
         System.out.println("throw custom MyException ");
         throw new MyException("사용자 정의 메서드 ");
     }
 
-    @RequestMapping("/mycustomdefault_exception_throw")
+    @RequestMapping("/myexception_error500_views_error_jsp")
     public void exception_throw5() throws Exception{
         System.out.println("throw custom MyException2 ");
         throw new MyException2("사용자 정의 메서드 ");
     }
-    @RequestMapping("/mycustom501_exception_throw")
+    @RequestMapping("/myexception_error501_webxml")
     public void exception_throw6() throws Exception{
-        System.out.println("throw custom MyException3 ");
+        System.out.println("throw custom MyException3 :: error501.jsp ");
         throw new MyException3("사용자 정의 메서드 ");
     }
-    @RequestMapping("/mycustom_error405_to_399")
+    @RequestMapping("/myexception_error405_to_399_servletcontext")
     public void exception_throw7() throws Exception{
         System.out.println("throw custom MyException4 ");
         throw new MyException4("사용자 정의 메서드 ");
+    }
+    @RequestMapping("/myexception_error502_webxml")
+    public void exception_throw8() throws Exception{
+        System.out.println("throw custom MyException5 ");
+        throw new MyException5("사용자 정의 메서드 ");
     }
 }
