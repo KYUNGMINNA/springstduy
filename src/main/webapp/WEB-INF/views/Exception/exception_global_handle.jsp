@@ -13,6 +13,7 @@
 <body>
 <h1>Global handle</h1>
 예외 발생 -> Global Handler가 정상적으로 처리되어  상태코드 200번 -> 상태코드를 바꾸거나 해야 함
-
+발생한 예외 : ${pageContext.exception}<br>
+예외 메시지 : ${pageContext.exception.message}<br>
 </body>
 </html>

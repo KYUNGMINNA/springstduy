@@ -12,5 +12,7 @@
 </head>
 <body>
 <H1>오류 발생한 메서드 내에서 예외 처리 try -catch </H1>
+발생한 예외 $ pageContext.exception : ${pageContext.exception}<br>
+예외 메시지 $ pageContext.exception.message: ${pageContext.exception.message}<br>
 </body>
 </html>

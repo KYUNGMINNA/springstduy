@@ -13,14 +13,13 @@ import java.security.GeneralSecurityException;
 
 @Controller
 public class Exception_handler {
-    @ExceptionHandler({NullPointerException.class,ArithmeticException.class})
+    @ExceptionHandler(NullPointerException.class)
     public String excption_handle(NullPointerException nullPointerException,
-                                  ArithmeticException arithmeticException,
                                   Model model){
         System.out.println("exceptionHandler Called");
         model.addAttribute("NULLPointerException",nullPointerException);
 
-        return "Exception/exception_local_handle2";
+        return "Exception/local_handler_nullpointerexception";
     }
 
     @RequestMapping("/local_nullpoint_exception_throw")
@@ -28,6 +27,22 @@ public class Exception_handler {
         System.out.println("throw NullpointException ");
         throw new NullPointerException("로컬 널포인트 에러 메시지 ");
     }
+
+    @ExceptionHandler(ArithmeticException.class)
+    public String excption_arithmetic(ArithmeticException arithmeticException,
+                                  Model model){
+        System.out.println("exceptionHandler Called");
+        model.addAttribute("ArithmeticException",arithmeticException);
+
+        return "Exception/local_handler_arithmeticexception";
+    }
+
+    @RequestMapping("/local_arithmetic_exception_throw")
+    public void exception_arithmetic() throws ArithmeticException{
+        System.out.println("throw ArithmeticException ");
+        throw new ArithmeticException("로컬 널포인트 에러 메시지 ");
+    }
+
 
     /////////////////////////////////
 
