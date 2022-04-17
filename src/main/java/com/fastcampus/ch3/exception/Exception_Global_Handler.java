@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class Exception_Global_Handler {
     @ExceptionHandler(SecurityException.class)
     public String glboal_handle(SecurityException securityException){
-
+        System.out.println("securityException = " + securityException);
         return "Exception/exception_global_handle";
 
   }

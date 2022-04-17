@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Global handle</h1>
-
+예외 발생 -> Global Handler가 정상적으로 처리되어  상태코드 200번 -> 상태코드를 바꾸거나 해야 함
 
 </body>
 </html>

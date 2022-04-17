@@ -70,6 +70,8 @@ public class Request_Yesparameter {
     //기본형, String 타입의 파라미터 테스트
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
     //객체형 타입의 파라미터 테스트
     @RequestMapping("/request_obejct")// http://localhost/ch3/request_object?year=2022&month=04&day=2&hour=23
     public String request_String_yes_p(Info info) {

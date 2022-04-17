@@ -51,9 +51,12 @@ public class Exception_handler {
     //////////////////////////////////////////
     @RequestMapping("/global_exception_exception_throw")
     public void exception_throw3() throws SecurityException{
-        System.out.println("throw Exception ");
+        System.out.println("throw new Security Exception ::글로벌 예외 발생 ");
         throw new SecurityException("글로벌 예외 에러 메시지 ");
     }
+
+    ////////////////////
+    // try ~catch 예외발생 및 처리
 
     @RequestMapping("/try_catch_exception_handle")
     public String try_catch_exception_handle() throws Exception {
