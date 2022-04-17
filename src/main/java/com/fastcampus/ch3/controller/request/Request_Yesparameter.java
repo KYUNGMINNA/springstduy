@@ -73,7 +73,7 @@ public class Request_Yesparameter {
 
 
     //객체형 타입의 파라미터 테스트
-    @RequestMapping("/request_obejct")// http://localhost/ch3/request_object?year=2022&month=04&day=2&hour=23
+    @RequestMapping("/request_obejct")// http://localhost/ch3/request_obejct?year=2022&month=04&day=2&hour=23
     public String request_String_yes_p(Info info) {
                                   //== @ModelAttribute Info info == @ModelAttribute("info") Info info
         return "String_Void_MV_YES_P/request_object_yes_p";
@@ -111,7 +111,7 @@ public class Request_Yesparameter {
         return modelAndView;
     }
     @RequestMapping("/request_object_modelandview2")  //http://localhost/ch3/request_object_modelandview2?year=2022&month=04&day=2&hour=23
-    public ModelAndView requestm_modelandview_yes_p2(Info info) {
+    public ModelAndView requestm_modelandview_yes_p2(@ModelAttribute("INfo") Info info) {
 
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("String_Void_MV_YES_P/request_object_yes_p2");

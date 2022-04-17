@@ -42,5 +42,13 @@ $ : {info.year}  :: ${info.year} <br>
 $ : {info.month} :: ${info.month}<br>
 $ : {info.day}   :: ${info.day}<br>
 $ : {info.hour}  :: ${info.hour}<br>
+<hr>
+<hr>
+<hr>
+<hr>
+$ : {INFO.year}  :: ${INFO.year} <br>
+$ : {INFO.month} :: ${INFO.month}<br>
+$ : {INFO.day}   :: ${INFO.day}<br>
+$ : {INFO.hour}  :: ${INFO.hour}<br>
 </body>
 </html>

@@ -58,7 +58,7 @@
 	</error-page>
 
 	<error-page>
-		<error-code>503</error-code>
+		<error-code>502</error-code>
 		<location>/WEB-INF/error502.jsp</location>
 	</error-page>
 	<error-page>
