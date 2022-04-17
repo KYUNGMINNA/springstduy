@@ -19,20 +19,29 @@
     String H=(String)request.getAttribute("HOUR");
 
 %>
-
+request.getAttribute는 Model객체혹은 ModelAndView객체 에서 값을 가져온다.<br>
 %=Y :int    Y=(int)request.getAttribute("YEAR")            ::<%=Y%><br>
-%=M :int    M=(int)request.getParameter("MONTH")           ::<%=M%><br>
-%=D :int    D=(int)request.getParameter("DAY")             ::<%=D%><br>
-%=H :String H=(String)request.getParameter("HOUR")         ::<%=H%><br>
+%=M :int    M=(int)request.getAttribute("MONTH")           ::<%=M%><br>
+%=D :int    D=(int)request.getAttribute("DAY")             ::<%=D%><br>
+%=H :String H=(String)request.getAttribute("HOUR")         ::<%=H%><br>
 <hr>
 <hr>
 <hr>
 <hr>
 <hr>
-$ : {YEAR}  :: ${YEAR} <br>
-$ : {MONTH} :: ${MONTH}<br>
-$ : {DAY}   :: ${DAY}<br>
-$ : {HOUR}  :: ${HOUR}<br>
+$ : {YEAR}  &nbsp;:: ${YEAR} <br>
+$ : {MONTH} &nbsp;:: ${MONTH}<br>
+$ : {DAY}   &nbsp;:: ${DAY}<br>
+$ : {HOUR}  &nbsp;:: ${HOUR}<br>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+$ : {year}  &nbsp;:: ${year} <br>
+$ : {month} &nbsp;:: ${month}<br>
+$ : {day}   &nbsp;:: ${day}<br>
+$ : {hour}  &nbsp;:: ${hour}<br>
 
 </body>
 </html>

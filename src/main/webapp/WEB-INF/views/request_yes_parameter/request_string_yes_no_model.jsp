@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>모델 없음</h1>
+
 <%
     String Y=request.getParameter("year");
     String M=request.getParameter("month");
@@ -20,7 +21,7 @@
 
 
 %>
-
+request.getParamtert는 Model객체에 저장된 것을 불러오는게 아니라 , URL에서 가져오는 것이다.<br>
 %=Y : String request.getParameter("year") ::  <%=Y%><br>
 %=M : String request.getParameter("month") ::<%=M%><br>
 %=D : String request.getParameter("day") ::<%=D%><br>
@@ -38,17 +39,10 @@ $ : {param.hour}  :: ${param.hour}<br>
 <hr>
 <hr>
 <hr>
-$ : {info.year}  :: ${info.year} <br>
-$ : {info.month} :: ${info.month}<br>
-$ : {info.day}   :: ${info.day}<br>
-$ : {info.hour}  :: ${info.hour}<br>
 <hr>
-<hr>
-<hr>
-<hr>
-$ : {INFO.year}  :: ${INFO.year} <br>
-$ : {INFO.month} :: ${INFO.month}<br>
-$ : {INFO.day}   :: ${INFO.day}<br>
-$ : {INFO.hour}  :: ${INFO.hour}<br>
+$ : {year} :&nbsp;${year}
+$ : {month} :&nbsp;${month}
+$ : {day} :&nbsp;${day}
+$ : {hour} :&nbsp;${hour}
 </body>
 </html>

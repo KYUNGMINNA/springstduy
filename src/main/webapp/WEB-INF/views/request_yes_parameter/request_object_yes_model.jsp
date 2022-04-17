@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.fastcampus.ch3.controller.request.Info" %><%--
   Created by IntelliJ IDEA.
   User: kyungmin
   Date: 2022-04-02
@@ -11,29 +11,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>모델 없음</h1>
+<h1>모델 있음</h1>
 <%
-    String Y=request.getParameter("year");
-    String M=request.getParameter("month");
-    String D=request.getParameter("day");
-    String H=request.getParameter("hour");
-
-
+    Info info=(Info) request.getAttribute("INFO");
 %>
-
-%=Y : String request.getParameter("year") ::  <%=Y%><br>
-%=M : String request.getParameter("month") ::<%=M%><br>
-%=D : String request.getParameter("day") ::<%=D%><br>
-%=H : String request.getParameter("hour") ::<%=H%><br>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-$ : {param.year}  :: ${param.year} <br>
-$ : {param.month} :: ${param.month}<br>
-$ : {param.day}   :: ${param.day}<br>
-$ : {param.hour}  :: ${param.hour}<br>
+Info info=(Info) request.getAttribute("INFO");<br>
+<%=info%><br>
+&lt;%= &nbsp; info.getYear()% &gt;  &nbsp;:: <%=info.getYear()%>  <br>
+&lt;%= &nbsp; info.getMonth()% &gt; &nbsp;:: <%=info.getMonth()%> <br>
+&lt;%= &nbsp; info.getYear()% &gt;  &nbsp;:: <%=info.getYear()%>  <br>
+&lt;%= &nbsp; info.getDay()% &gt;   &nbsp;:: <%=info.getDay()%>   <br>
 <hr>
 <hr>
 <hr>
