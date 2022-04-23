@@ -8,7 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 @Controller
-public class Get_Post_Mapping_redirect_forward {
+public class Get_Post_redirect_forward {
     @GetMapping("/get_post/getmapping")
     public void getmap(){
 
