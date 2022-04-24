@@ -28,7 +28,13 @@ public class Cookies {
 
 
 
-        return "redirect:/login_after_post";
+        //return "redirect:/login_after_get";
+        return "forward:/login_after_post";
+
+        // 로그인 테스트
+        //redirect:/login_after_post-->요청 URL ::login_cookie_after_get  OK
+        //forward:/login_after_post -->요청 URL ::cookie_get              OK;
+
     }
 
 
