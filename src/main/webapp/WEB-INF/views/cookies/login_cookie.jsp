@@ -12,12 +12,12 @@
 </head>
 <body>
 <h1>Cookie page</h1>
- <!-- /ch3 를 붙여야 한다 안붙이려면 'c':url을 사용 해야 함  -->
+<!-- /ch3 를 붙여야 한다 안붙이려면 'c':url을 사용 해야 함  -->
 <form action="/ch3/cookie_get" method="post">
-    아이디<input type="text" name="id"><br>
+    아이디<input type="text" name="id" value="${cookie.id.value}"><br>
     비밀번호<input type="password" name="password"><br>
     <label>
-        쿠키여부<input type="checkbox" name="cookiecheck" >
+        쿠키여부<input type="checkbox" name="cookiecheck" ${empty cookie.id.value?"":"checked"}>
     </label>
     <input type="submit" value="클릭">
 

@@ -25,31 +25,46 @@ public class Cookies {
         System.out.println("cookiecheck = " + cookiecheck);
 
 
+        if (cookiecheck) {
+            //1.쿠키를 생성
+            Cookie cookie = new Cookie("id", id);
+            //2.응답에 저장
+            response.addCookie(cookie);
+        } else {
+            Cookie cookie = new Cookie("id", id);
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
+        }
 
 
+        return "redirect:/login_cookie_after";
 
-        //return "redirect:/login_after_get";
-        return "forward:/login_after_post";
 
         // 로그인 테스트
-        //redirect:/login_after_post-->요청 URL ::login_cookie_after_get  OK
-        //forward:/login_after_post -->요청 URL ::cookie_get              OK;
+        //return "redirect:/login_after_get"-->요청 URL ::login_cookie_after_get  OK
+        //return "forward:/login_after_post" -->요청 URL ::cookie_get              OK;
 
     }
 
 
-        //redirect 용
+        //로그인 redirect
         @GetMapping("/login_after_get")
         public String login_cookie_after_get() {
             return "cookies/login_cookie";
             //return "cookies/login_after";
         }
-        //forward용
+        //로그인 forward
         @PostMapping("/login_after_post")
         public String login_cookie_after_post () {
             return "cookies/login_after";
         }
 
+
+        //로그인 후 쿠키 적용 테스트
+        @RequestMapping("/login_cookie_after")
+        public String login_cookie_after(){
+            return "cookies/login_cookie";
+        }
 
 }
 
