@@ -15,6 +15,7 @@
 <h1>Cookie page</h1>
 <!-- /ch3 를 붙여야 한다 안붙이려면 'c':url을 사용 해야 함  :: postmapping의 URL로 요청 -->
 <form action="/ch3/cookie_get" method="post">
+    <h3>현재 페이지 session="false"</h3><br>
     아이디<input type="text" name="id" value="${cookie.id.value}"><br>
     비밀번호<input type="password" name="password"><br>
     <label>
