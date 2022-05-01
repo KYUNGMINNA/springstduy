@@ -3,7 +3,6 @@ package com.fastcampus.ch3.controller.cookies;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +14,7 @@ public class Cookies {
 
     @GetMapping("/cookie_get")
     public String cookie_get() {
-        return "cookies/login_cookie";
+        return "login_before";
     }
 
     @PostMapping("/cookie_get")
@@ -56,7 +55,7 @@ public class Cookies {
         //로그인 redirect
         @GetMapping("/login_after_get")
         public String login_cookie_after_get() {
-            return "cookies/login_cookie";
+            return "login_before";
             //return "cookies/login_after";
         }
         //로그인 forward
