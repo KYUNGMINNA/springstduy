@@ -39,15 +39,16 @@ public class Cookies {
         }
 
 
-        return "redirect:/login_after";  // redirect는 요청 URL을 전달하는것이라
-                                        // URL을 처리할 메서드가 있어야 함 그래서 오류  XXXXXX
+        return "cookies/login_after";
 
         //쿠키 테스트
         //return "redirect:/login_cookie_after"; // 리턴값에 해당하는 요청을 처리하는 메서드가 존재하여 정상동작 OK
 
         // 로그인 테스트
         //return "redirect:/login_after_get"-->요청 URL ::login_cookie_after_get  OK
+              //return "forward:/login_after_get";  //에러  Request method 'POST' not supported
         //return "forward:/login_after_post" -->요청 URL ::cookie_get              OK;
+               //return "redirect:/login_after_post"; // 에러  Request method 'GET' not supported
 
     }
 

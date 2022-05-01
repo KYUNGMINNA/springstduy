@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-로그인 후 화면
+로그인 후 화면<hr>
+${cookie.id.value} 쿠키 아이디 값은 바로 안나오고 새로고침 한번 하면 나옴.
 </body>
 </html>
