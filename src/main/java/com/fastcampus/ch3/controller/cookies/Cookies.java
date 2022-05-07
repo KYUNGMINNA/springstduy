@@ -14,7 +14,7 @@ public class Cookies {
 
     @GetMapping("/cookie_get")
     public String cookie_get() {
-        return "login_before";
+        return "cookies/login_before";
     }
 
     @PostMapping("/cookie_get")
