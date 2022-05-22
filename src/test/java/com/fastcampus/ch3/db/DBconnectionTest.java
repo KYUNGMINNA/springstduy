@@ -52,6 +52,15 @@ public class DBconnectionTest {
         assertTrue(conn!=null);
     }
 
+
+
+    /*
+     DB TABLE :
+     CREATE TABLE db_table(
+	id varchar(100) PRIMARY KEY ,
+    pw varchar(100));
+
+    */
     @Test
     public void db_insert_test() throws SQLException{
         String sql="INSERT INTO db_table VALUES(?,?)";
