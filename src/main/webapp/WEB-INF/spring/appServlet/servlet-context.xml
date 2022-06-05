@@ -33,7 +33,7 @@
 
 
 
-	 <!-- 예외 종류 별 뷰 맵핑에 사용 하기 -->
+	 <!-- 자바 예외 종류 별 뷰 맵핑에 사용 하기 -->
 	<beans:bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<beans:property name="defaultErrorView" value="error"/>
 		<beans:property name="exceptionMappings">
@@ -49,9 +49,6 @@
 	</beans:bean>
 
 
-	<!-- global 예외 처리기 등록하기 -->
-	<annotation-driven validator="globalvalidator"/>
-	<beans:bean id="globalvalidator" class="com.fastcampus.ch3.conversion.validation.globalvalidator"/>
 
 	<!-- error_message.properites.properties -->
 	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
