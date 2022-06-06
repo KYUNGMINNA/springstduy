@@ -24,15 +24,6 @@ public class DBconnection {
 
 
 
-    @Autowired
-    private SqlSession session;
-
-    @GetMapping("/mybatis")
-    public void mybatis() {
-        System.out.println("myBatis DB연결하기 ");
-        System.out.println("session = " + session);
-
-    }
 
 
 }
