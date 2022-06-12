@@ -23,13 +23,13 @@
 	
 	<context:component-scan base-package="com.fastcampus.ch3" />
 
-   <!--   http://localhost/ch3/view_yes_p         ::요청 view_controller   -->
+   <!--   http://localhost/ch3/view_yes_p         ::요청 view_controller   //view-name: JSP파일 위치   -->
 	<view-controller path="/view_controller" view-name="request_no_parameter/view_controller" />
 
 
 
-	<!-- http://localhost/ch3/view_yes_p?year=2022&month=04&day=2&hour=23         -->
-	<view-controller path="/view_yes_p" view-name="request_yes_parameter/request_object_yes_no_model" />
+	<!-- http://localhost/ch3/view_yes_p?year=2022&month=04&day=2&hour=23     :요청 view_yes_p?year=2022&month=04&day=2&hour=12   //view-name: JSP파일 위치 -object는 파라미터안넘어옴     -->
+	<view-controller path="/view_yes_p" view-name="request_yes_parameter/request_string_yes_no_model" />
 
 
 
@@ -49,9 +49,6 @@
 	</beans:bean>
 
 
-	<!-- global 예외 처리기 등록하기 -->
-	<annotation-driven validator="globalvalidator"/>
-	<beans:bean id="globalvalidator" class="com.fastcampus.ch3.conversion.validation.globalvalidator"/>
 
 	<!-- error_message.properites.properties -->
 	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
