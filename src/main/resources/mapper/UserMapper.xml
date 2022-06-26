@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.fastcampus.ch3.db.IUserDAO">
+
+    <resultMap id="UserMap" type="com.fastcampus.ch3.db.UserVO">
+        <id property="userNo" column="user_no"/>
+        <result property="userId" column="user_id"/>
+        <result property="userPw" column="user_pw"/>
+    </resultMap>
+
+    <insert id="insert">
+        INSERT INTO user_table
+        VALUES (user_table_seq.NEXTVAL, #{userId}, #{userPw})
+    </insert>
+
+    <select id="selectAll" resultMap="UserMap">
+        SELECT *
+        FROM user_table
+    </select>
+
+    <select id="selectOne" resultMap="UserMap">
+        SELECT *
+        FROM user_table
+        WHERE user_no = #{userNo}
+    </select>
+
+    <delete id="delete">
+        DELETE
+        FROM user_table
+        WHERE user_no = #{userNo}
+    </delete>
+
+    <update id="update">
+        UPDATE user_table
+        SET user_pw=${userNo}
+        WHERE user_no = #{userNo}
+    </update>
+</mapper>
