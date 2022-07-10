@@ -20,6 +20,13 @@
 		<property name="password" value="6413"></property>
 	</bean>
 
+	<bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="username" value="spring"/>
+		<property name="password" value="spring"/>
+	</bean>
+
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
